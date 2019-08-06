@@ -1,0 +1,28 @@
+{
+  "name": "MMM-TFL-Stops",
+  "version": "0.1.0",
+  "description": "MagicMirror 2 module to get predictions from multiple stops using the TfL API.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/threesquared/MMM-TFL-Stops"
+  },
+  "keywords": [
+    "magic mirror",
+    "smart mirror",
+    "transport",
+    "london",
+    "underground",
+    "TfL",
+    "module"
+  ],
+  "author": "Ben Speakman",
+  "contributors": "https://github.com/threesquared/MMM-TFL-Stops/graphs/contributors",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/threesquared/MMM-TFL-Stops/issues"
+  },
+  "homepage": "https://github.com/threesquared/MMM-TFL-Stops#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}

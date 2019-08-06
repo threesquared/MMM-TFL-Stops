@@ -1,0 +1,38 @@
+{% if not config.stops.length %}
+
+    <div class="dimmed light small">Please set some stops with naptan codes.</div>
+
+{% elif not config.appId or not config.appKey %}
+
+    <div class="dimmed light small">Please set the application ID and secret.</div>
+
+{% elif not loaded %}
+
+    <div class="dimmed light small">Loading ...</div>
+
+{% elif predictions %}
+
+    {% set currentStep = 0 %}
+    <table class="small">
+
+    {% for prediction in predictions %}
+
+        <tr {% if config.fade %}style="opacity: {{ currentStep | opacity(predictions.length) }};"{% endif %}>
+            <td class="route {{ prediction.modeName }}">
+                <i class="fas {{ prediction.modeName | getIcon }}"></i>
+                {{ prediction.routeName }}
+            </td>
+            <td class="dest bright">{{ prediction.destinationName }}</td>
+            <td class="timeTabled">{{ prediction.timeToStation | formatTime }}</td>
+        </tr>
+
+        {% set currentStep = currentStep + 1 %}
+    {% endfor %}
+
+    </table>
+
+{% else %}
+
+    <div class="dimmed light small">No data</div>
+
+{% endif %}
